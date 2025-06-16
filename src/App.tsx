@@ -1,5 +1,14 @@
+import { Header } from "./Header.component";
+import { RandomWordParagraph } from "./Paragraph.component";
+
 function App() {
-  return <h1>Vite + React</h1>;
+  return (
+    <>
+      <Header />
+      <h1>React Essentials</h1>
+      <RandomWordParagraph />
+    </>
+  );
 }
 
 export default App;
