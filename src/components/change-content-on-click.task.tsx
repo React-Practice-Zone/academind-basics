@@ -21,10 +21,10 @@ export default function App() {
         <div data-testid="alert" id="alert">
           <h2>Are you sure?</h2>
           <p>These changes can't be reverted!</p>
-          <button onClick={() => editContent(2)}>Proceed</button>
+          <button onClick={() => editContent()}>Proceed</button>
         </div>
       ) : (
-        <button onClick={() => editContent(1)}>Delete</button>
+        <button onClick={() => editContent()}>Delete</button>
       )}
     </div>
   );
