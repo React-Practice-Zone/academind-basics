@@ -5,6 +5,15 @@ import { useState } from "react";
 import { TabButton } from "./components/tab-button.component";
 import reactImage from "./assets/react-core-concepts.png";
 import CORE_CONCEPTS from "./utils/core-concepts.util";
+import { styled } from "styled-components";
+
+const StyledTabContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+`;
 
 function App() {
   // * 2nd element should start from 'set' - this is a naming convention in React
@@ -27,7 +36,7 @@ function App() {
             Core Concepts
           </h2>
 
-          <div className="flex flex-wrap justify-center gap-2 mb-8">
+          <StyledTabContainer>
             {CORE_CONCEPTS.map((conceptItem) => (
               <TabButton
                 key={conceptItem.title}
@@ -37,7 +46,7 @@ function App() {
                 {conceptItem.title}
               </TabButton>
             ))}
-          </div>
+          </StyledTabContainer>
 
           <div className="flex justify-center">
             {selectedConceptData && (
