@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-family-roboto-condensed: "Roboto Condensed", sans-serif;
+  --color-purple-custom: #a18aba;
+}
 
 * {
   box-sizing: border-box;
@@ -40,6 +43,7 @@ header h1 {
   font-size: 5rem;
   background: linear-gradient(40deg, #ea00ff, #ea00ff, #03d5ff, #03d5ff);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
 }

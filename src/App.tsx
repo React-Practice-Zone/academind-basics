@@ -7,16 +7,16 @@ import reactImage from "./assets/react-core-concepts.png";
 import CORE_CONCEPTS from "./utils/core-concepts.util";
 import { styled } from "styled-components";
 
-const MainH2 = styled.h2`
-  text-align: center;
-  font-family: "Roboto Condensed", sans-serif;
-  margin: 0 0 1.5rem 0;
-  color: #a18aba;
-`;
+// const MainH2 = styled.h2`
+//   text-align: center;
+//   font-family: "Roboto Condensed", sans-serif;
+//   margin: 0 0 1.5rem 0;
+//   color: #a18aba;
+// `;
 
-const ExamplesSection = styled.section`
-  margin-bottom: 3rem;
-`;
+// const ExamplesSection = styled.section`
+//   margin-bottom: 3rem;
+// `;
 
 const ButtonContainer = styled.div`
   display: flex;
@@ -49,11 +49,13 @@ function App() {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="">
       <Header image={reactImage} />
       <Main>
-        <ExamplesSection id="examples">
-          <MainH2>Core Concepts</MainH2>
+        <section id="examples">
+          <h2 className="text-center text-lg font-[Roboto_Condensed,sans-serif] mb-6 text-fuchsia-300">
+            Core Concepts
+          </h2>
 
           <ButtonContainer>
             <menu>
@@ -78,7 +80,7 @@ function App() {
               />
             )}
           </ConceptContainer>
-        </ExamplesSection>
+        </section>
       </Main>
       <RandomWordParagraph />
     </div>
