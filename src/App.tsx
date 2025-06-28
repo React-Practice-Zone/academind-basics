@@ -7,12 +7,33 @@ import reactImage from "./assets/react-core-concepts.png";
 import CORE_CONCEPTS from "./utils/core-concepts.util";
 import { styled } from "styled-components";
 
-const StyledTabContainer = styled.div`
+const MainH2 = styled.h2`
+  text-align: center;
+  font-family: "Roboto Condensed", sans-serif;
+  margin: 0 0 1.5rem 0;
+  color: #a18aba;
+`;
+
+const ExamplesSection = styled.section`
+  margin-bottom: 3rem;
+`;
+
+const ButtonContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+`;
+
+const ConceptContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
+const Main = styled.main`
+  width: 90%;
+  max-width: 50rem;
+  margin: auto;
 `;
 
 function App() {
@@ -30,25 +51,25 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header image={reactImage} />
-      <main className="container mx-auto px-4 py-8">
-        <section id="core-concept" className="mb-12">
-          <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
-            Core Concepts
-          </h2>
+      <Main>
+        <ExamplesSection id="examples">
+          <MainH2>Core Concepts</MainH2>
 
-          <StyledTabContainer>
-            {CORE_CONCEPTS.map((conceptItem) => (
-              <TabButton
-                key={conceptItem.title}
-                isSelected={selectedConcept === conceptItem.title}
-                onClick={() => handleSelect(conceptItem.title)}
-              >
-                {conceptItem.title}
-              </TabButton>
-            ))}
-          </StyledTabContainer>
+          <ButtonContainer>
+            <menu>
+              {CORE_CONCEPTS.map((conceptItem) => (
+                <TabButton
+                  key={conceptItem.title}
+                  isSelected={selectedConcept === conceptItem.title}
+                  onClick={() => handleSelect(conceptItem.title)}
+                >
+                  {conceptItem.title}
+                </TabButton>
+              ))}
+            </menu>
+          </ButtonContainer>
 
-          <div className="flex justify-center">
+          <ConceptContainer>
             {selectedConceptData && (
               <CoreConcept
                 title={selectedConceptData.title}
@@ -56,9 +77,9 @@ function App() {
                 imageUrl={selectedConceptData.imageUrl}
               />
             )}
-          </div>
-        </section>
-      </main>
+          </ConceptContainer>
+        </ExamplesSection>
+      </Main>
       <RandomWordParagraph />
     </div>
   );
